@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/nature"
+    android:orientation="vertical"
+    tools:context="com.example.anay.stockmaintenance.HomeActivity">
+
+    <Button
+        android:id="@+id/newbill"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginTop="120dp"
+        android:layout_weight="1"
+        android:elevation="10dp"
+        android:padding="5dp"
+        android:text="New Bill"
+        android:textAllCaps="false"
+        android:textSize="28sp"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/oldbill"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginTop="24dp"
+        android:layout_weight="1"
+        android:elevation="10dp"
+        android:padding="5dp"
+        android:text="Old Bill"
+        android:textAllCaps="false"
+        android:textSize="28sp" />
+
+    <Button
+        android:id="@+id/update"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginTop="24dp"
+        android:layout_weight="1"
+        android:elevation="10dp"
+        android:padding="5dp"
+        android:text="Update Stock"
+        android:textAllCaps="false"
+        android:textSize="28sp" />
+
+    <Button
+        android:id="@+id/check"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="120dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginTop="24dp"
+        android:layout_weight="1"
+        android:elevation="10dp"
+        android:padding="5dp"
+        android:text="Stock List"
+        android:textAllCaps="false"
+        android:textSize="28sp" />
+
+</LinearLayout>

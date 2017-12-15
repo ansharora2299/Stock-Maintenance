@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Stock Maintenance</string>
+    <string name="title_activity_new_bill">NewBill</string>
+    <string name="print">Print</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="auth_sharedpref">authentication</string>
+    <string name="key_name">name</string>
+    <string name="key_quantity">quantity</string>
+</resources>
