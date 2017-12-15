@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 
@@ -46,12 +47,14 @@ public class NewBill extends AppCompatActivity {
             }
         });
 
-
         print = (Button)findViewById(R.id.print);
         print.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(NewBill.this, Bill.class));
+                if(itemlist.isEmpty())
+                    Toast.makeText(NewBill.this, "Add Items for Billing", Toast.LENGTH_SHORT).show();
+                else
+                    startActivity(new Intent(NewBill.this, Bill.class));
             }
         });
     }
