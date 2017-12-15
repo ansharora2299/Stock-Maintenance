@@ -24,7 +24,6 @@ public class UpdateStock extends AppCompatActivity {
     EditText itemnameid,itemquantityid;
     String name,quantity;
     static ArrayList<ItemModel> stocklist = new ArrayList<>();
-    //SharedPreferences auth_sharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,15 +38,8 @@ public class UpdateStock extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                //get name and quantity from user
-                String name=itemnameid.getText().toString();
-                String quantity=itemquantityid.getText().toString();
-                //auth_sharedPref=getApplicationContext().getSharedPreferences(getString(R.string.auth_sharedpref), Context.MODE_PRIVATE);
-
-                //String saved_name = auth_sharedPref.getString(getString(R.string.key_name), "");
-
-                //String saved_quantity = auth_sharedPref.getString(getString(R.string.key_quantity), "");
-
+                name=itemnameid.getText().toString();
+                quantity=itemquantityid.getText().toString();
 
                 if(name.isEmpty()||quantity.isEmpty())
                 {

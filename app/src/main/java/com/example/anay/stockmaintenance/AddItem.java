@@ -23,7 +23,6 @@ public class AddItem extends AppCompatActivity {
     EditText nameid,quantityid;
     String name,quantity;
     static ArrayList<ItemModel> stocklist = new ArrayList<>();
-    //SharedPreferences auth_sharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,15 +37,9 @@ public class AddItem extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                //get name and quantity fron user
-                String name=nameid.getText().toString();
-                String quantity=quantityid.getText().toString();
-                //auth_sharedPref=getApplicationContext().getSharedPreferences(getString(R.string.auth_sharedpref), Context.MODE_PRIVATE);
-
-                //String saved_name = auth_sharedPref.getString(getString(R.string.key_name), "");
-                //
-                // String saved_quantity = auth_sharedPref.getString(getString(R.string.key_quantity), "");
-
+                name=nameid.getText().toString();
+                quantity=quantityid.getText().toString();
+                
                 if(name.isEmpty()||quantity.isEmpty())
                 {
                     Toast.makeText(AddItem.this, "Fields Cannot be empty", Toast.LENGTH_SHORT).show();

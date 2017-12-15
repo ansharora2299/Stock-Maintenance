@@ -7,10 +7,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import java.util.*;
 
-/**
- * Created by Anay on 12-12-2017.
- */
-
 public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ItemViewHolder> {
    static ArrayList<ItemModel> itemlist ;
     class ItemViewHolder extends RecyclerView.ViewHolder{
