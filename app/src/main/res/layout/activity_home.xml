@@ -19,9 +19,12 @@
         android:layout_weight="1"
         android:elevation="10dp"
         android:padding="5dp"
+        android:soundEffectsEnabled="false"
         android:text="New Bill"
         android:textAllCaps="false"
+        android:textColor="@color/colorPrimary"
         android:textSize="28sp"
+        android:textStyle="italic"
         android:visibility="visible" />
 
     <Button
@@ -36,7 +39,9 @@
         android:padding="5dp"
         android:text="Old Bill"
         android:textAllCaps="false"
-        android:textSize="28sp" />
+        android:textColor="@color/colorPrimary"
+        android:textSize="28sp"
+        android:textStyle="italic" />
 
     <Button
         android:id="@+id/update"
@@ -50,7 +55,11 @@
         android:padding="5dp"
         android:text="Update Stock"
         android:textAllCaps="false"
-        android:textSize="28sp" />
+        android:textColor="@color/colorPrimary"
+        android:textColorLink="@color/colorAccent"
+        android:textIsSelectable="false"
+        android:textSize="28sp"
+        android:textStyle="italic" />
 
     <Button
         android:id="@+id/check"
@@ -64,7 +73,9 @@
         android:padding="5dp"
         android:text="Stock List"
         android:textAllCaps="false"
-        android:textSize="28sp" />
+        android:textColor="?attr/actionModeSplitBackground"
+        android:textSize="28sp"
+        android:textStyle="italic" />
 
     <Button
         android:id="@+id/stockbuy"
@@ -79,7 +90,9 @@
         android:padding="5dp"
         android:text="Items To Buy"
         android:textAllCaps="false"
+        android:textColor="@android:color/holo_red_dark"
         android:textSize="28sp"
+        android:textStyle="italic"
         android:visibility="visible" />
 
 </LinearLayout>
