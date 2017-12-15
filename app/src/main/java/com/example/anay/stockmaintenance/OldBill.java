@@ -14,6 +14,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 public class OldBill extends AppCompatActivity {
 
@@ -28,6 +30,7 @@ public class OldBill extends AppCompatActivity {
         setContentView(R.layout.activity_old_bill);
 
         prevbills = readFromFile();
+        Collections.reverse(prevbills);
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         itemAdapter= new NoteAdapter(prevbills);

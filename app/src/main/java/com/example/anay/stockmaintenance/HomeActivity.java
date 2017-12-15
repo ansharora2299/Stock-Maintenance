@@ -7,13 +7,12 @@ import android.view.View;
 import android.widget.Button;
 
 public class HomeActivity extends AppCompatActivity {
-Button nb,ob,us,cq;
+Button nb,ob,us,cq,sb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        Button nb,ob,us,cq;
         nb=findViewById(R.id.newbill);
         nb.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +39,13 @@ Button nb,ob,us,cq;
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(HomeActivity.this, CheckQuantity.class));
+            }
+        });
+        sb=findViewById(R.id.stockbuy);
+        sb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, StockBuy.class));
             }
         });
     }
