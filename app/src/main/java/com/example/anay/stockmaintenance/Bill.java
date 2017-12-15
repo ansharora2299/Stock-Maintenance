@@ -31,14 +31,13 @@ public class Bill extends AppCompatActivity {
 
         itemlist = readFromFile();
         stocklist = readFromStock();
-        Iterator<ItemModel> i=itemlist.iterator();
-        Iterator<ItemModel> j=stocklist.iterator();
-        while(j.hasNext())
+
+        for(int l=0;l<stocklist.size();l++)
         {
-            ItemModel stockitem=j.next();
-            while(i.hasNext())
+            ItemModel stockitem=stocklist.get(l);
+            for(int k=0;k<itemlist.size();k++)
             {
-                ItemModel listitem=i.next();
+                ItemModel listitem=itemlist.get(k);
                 if(listitem.name.equalsIgnoreCase(stockitem.name))
                 {
                     stockitem.quantity=Integer.toString(Integer.parseInt(stockitem.quantity)-Integer.parseInt(listitem.quantity));
