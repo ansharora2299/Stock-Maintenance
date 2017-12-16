@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     tools:context="com.example.anay.stockmaintenance.NewBill">
 
     <android.support.design.widget.AppBarLayout
@@ -47,14 +48,16 @@
     <Button
         android:id="@+id/print"
         android:layout_width="120dp"
-        android:layout_height="wrap_content"
+        android:layout_height="41dp"
         android:layout_alignTop="@+id/fab"
         android:layout_marginBottom="20dp"
         android:layout_marginEnd="35dp"
         android:layout_toLeftOf="@+id/fab"
         android:layout_toStartOf="@+id/fab"
+        android:background="@drawable/btn"
         android:text="Print"
         app:layout_anchor="@+id/include"
-        app:layout_anchorGravity="bottom|center_horizontal" />
+        app:layout_anchorGravity="bottom|center_horizontal"
+        tools:layout_editor_absoluteY="506dp" />
 
 </android.support.design.widget.CoordinatorLayout>

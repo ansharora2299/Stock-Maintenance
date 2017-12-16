@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="@drawable/nature"
+    android:background="@drawable/bg"
     android:orientation="vertical"
     tools:context="com.example.anay.stockmaintenance.HomeActivity">
 
@@ -23,6 +23,7 @@
         android:text="New Bill"
         android:textAllCaps="false"
         android:textColor="@color/colorPrimary"
+        android:background="@drawable/btn"
         android:textSize="28sp"
         android:textStyle="italic"
         android:visibility="visible" />
@@ -40,6 +41,7 @@
         android:text="Old Bill"
         android:textAllCaps="false"
         android:textColor="@color/colorPrimary"
+        android:background="@drawable/btn"
         android:textSize="28sp"
         android:textStyle="italic" />
 
@@ -57,6 +59,7 @@
         android:textAllCaps="false"
         android:textColor="@color/colorPrimary"
         android:textColorLink="@color/colorAccent"
+        android:background="@drawable/btn"
         android:textIsSelectable="false"
         android:textSize="28sp"
         android:textStyle="italic" />
@@ -74,6 +77,7 @@
         android:text="Stock List"
         android:textAllCaps="false"
         android:textColor="?attr/actionModeSplitBackground"
+        android:background="@drawable/btn"
         android:textSize="28sp"
         android:textStyle="italic" />
 
@@ -91,6 +95,7 @@
         android:text="Items To Buy"
         android:textAllCaps="false"
         android:textColor="@android:color/holo_red_dark"
+        android:background="@drawable/btn"
         android:textSize="28sp"
         android:textStyle="italic"
         android:visibility="visible" />
