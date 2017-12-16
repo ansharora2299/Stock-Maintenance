@@ -14,11 +14,9 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class StockBuy extends AppCompatActivity {
 
-    static ArrayList<ItemModel> itemlist = new ArrayList<>();
     static ArrayList<ItemModel> buylist = new ArrayList<>();
     RecyclerView recyclerView;
     NoteAdapter itemAdapter;
@@ -28,17 +26,7 @@ public class StockBuy extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stock_buy);
-        try
-        {
-            itemlist = readFromStock();
-        }
-        catch(Exception e){}
-        for(int i=0;i<itemlist.size();i++)
-        {
-            if(Integer.parseInt(itemlist.get(i).quantity)<=5)
-                buylist.add(itemlist.get(i));
-        }
-        buylist=sort(buylist);
+        buylist=readFromBuy();
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         itemAdapter = new NoteAdapter(buylist);
         recyclerView.setAdapter(itemAdapter);
@@ -52,9 +40,9 @@ public class StockBuy extends AppCompatActivity {
             }
         });
     }
-    public ArrayList<ItemModel> readFromStock(){
-        String filename="Stock.txt";
-        ArrayList<ItemModel> itemlist = new ArrayList<>();
+    public ArrayList<ItemModel> readFromBuy(){
+        String filename="Buy.txt";
+        ArrayList<ItemModel> stocklist = new ArrayList<>();
         Gson gson=new Gson();
         try{
             File file=new File(getApplicationContext().getFilesDir(),filename);
@@ -62,28 +50,11 @@ public class StockBuy extends AppCompatActivity {
             BufferedReader br=new BufferedReader(new FileReader(file));
             while((line=br.readLine())!=null){
                 ItemModel item=gson.fromJson(line,ItemModel.class);
-                itemlist.add(item);
+                stocklist.add(item);
             }
             br.close();
-        }
-        catch (Exception e){
+        }catch (Exception e){
             e.getMessage();
-        }
-        return itemlist;
-    }
-    public ArrayList<ItemModel> sort(ArrayList<ItemModel> stocklist)
-    {
-        for(int i=0;i<stocklist.size()-1;i++)
-        {
-            ItemModel itemi=stocklist.get(i);
-            for(int j=i+1;j<stocklist.size();j++)
-            {
-                ItemModel itemj=stocklist.get(j);
-                if(itemi.name.compareTo(itemj.name)>0)
-                {
-                    Collections.swap(stocklist,i,j);
-                }
-            }
         }
         return stocklist;
     }

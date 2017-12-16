@@ -23,7 +23,7 @@ public class AddItem extends AppCompatActivity {
     EditText nameid,quantityid;
     String name,quantity;
     static ArrayList<ItemModel> stocklist = new ArrayList<>();
-
+    static ArrayList<ItemModel> itemlist = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +39,7 @@ public class AddItem extends AppCompatActivity {
 
                 name=nameid.getText().toString();
                 quantity=quantityid.getText().toString();
-                
+
                 if(name.isEmpty()||quantity.isEmpty())
                 {
                     Toast.makeText(AddItem.this, "Fields Cannot be empty", Toast.LENGTH_SHORT).show();
@@ -82,7 +82,26 @@ public class AddItem extends AppCompatActivity {
                         check=false;
                     }
                     if(check) {
-                        NoteAdapter.itemlist.add(item);
+                        itemlist=readFromItems();
+                        for(int j=0;j<itemlist.size();j++)
+                        {
+                            if(itemlist.get(j).name.equalsIgnoreCase(item.name))
+                            {
+                                item.quantity=Integer.toString(Integer.parseInt(item.quantity)+Integer.parseInt(itemlist.get(j).quantity));
+                                continue;
+                            }
+                            writeToFile(itemlist.get(j));
+                        }
+                        for(int j=0;j<stocklist.size();j++)
+                        {
+                            ItemModel x=stocklist.get(j);
+                            if(x.name.equalsIgnoreCase(item.name))
+                            {
+                                item.price=Float.toString(Integer.parseInt(item.quantity)*Float.parseFloat(x.price));
+                                break;
+                            }
+                        }
+                        PriceAdapter.pricelist.add(item);
                         writeToFile(item);
                     }
                     Intent intent = new Intent(AddItem.this, NewBill.class);
@@ -139,5 +158,24 @@ public class AddItem extends AppCompatActivity {
             }
         }
         return check;
+    }
+    public ArrayList<ItemModel> readFromItems(){
+        String filename="Items.txt";
+        ArrayList<ItemModel> itemlist = new ArrayList<>();
+        Gson gson=new Gson();
+        try{
+            File file=new File(getApplicationContext().getFilesDir(),filename);
+            String line;
+            BufferedReader br=new BufferedReader(new FileReader(file));
+            while((line=br.readLine())!=null){
+                ItemModel item=gson.fromJson(line,ItemModel.class);
+                itemlist.add(item);
+            }
+            br.close();
+            file.delete();
+        }catch (Exception e){
+            e.getMessage();
+        }
+        return itemlist;
     }
 }

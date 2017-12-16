@@ -6,13 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.io.File;
+
 public class HomeActivity extends AppCompatActivity {
 Button nb,ob,us,cq,sb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
         nb=findViewById(R.id.newbill);
         nb.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +49,12 @@ Button nb,ob,us,cq,sb;
                 startActivity(new Intent(HomeActivity.this, StockBuy.class));
             }
         });
+    }
+    public void onResume()
+    {
+        super.onResume();
+        File file=new File(getApplicationContext().getFilesDir(),"Items.txt");
+        file.delete();
     }
 
 }

@@ -21,7 +21,7 @@ public class Bill extends AppCompatActivity {
     static ArrayList<ItemModel> itemlist = new ArrayList<>();
     static ArrayList<ItemModel> stocklist = new ArrayList<>();
     RecyclerView recyclerView;
-    NoteAdapter itemAdapter;
+    PriceAdapter itemAdapter;
     Button home;
 
     @Override
@@ -48,7 +48,7 @@ public class Bill extends AppCompatActivity {
         }
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        itemAdapter= new NoteAdapter(itemlist);
+        itemAdapter= new PriceAdapter(itemlist);
         recyclerView.setAdapter(itemAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
