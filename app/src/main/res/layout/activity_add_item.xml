@@ -16,9 +16,12 @@
         android:layout_marginRight="28dp"
         android:layout_marginTop="120dp"
         android:layout_weight="1"
+        android:contextClickable="false"
         android:ems="10"
         android:hint="Item Name"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:textColor="@android:color/background_dark"
+        android:textIsSelectable="false" />
 
     <EditText
         android:id="@+id/quantity"
@@ -30,7 +33,9 @@
         android:layout_weight="1"
         android:ems="10"
         android:hint="Item Quantity"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:textColor="@android:color/background_dark"
+        android:textColorLink="@color/colorPrimaryDark" />
 
     <Button
         android:id="@+id/add"

@@ -9,8 +9,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Name"
-        android:textSize="16sp"
+        android:textColor="@android:color/background_dark"
 
+        android:textSize="16sp"
         android:textStyle="bold" />
 
     <TextView
@@ -18,8 +19,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Quanity"
-        android:textSize="16sp"
-         />
+        android:textColor="@android:color/background_dark"
+        android:textSize="16sp" />
 
     <View
         android:layout_width="match_parent"
