@@ -24,6 +24,7 @@ public class AddItem extends AppCompatActivity {
     String name,quantity;
     static ArrayList<ItemModel> stocklist = new ArrayList<>();
     static ArrayList<ItemModel> itemlist = new ArrayList<>();
+    static ArrayList<ItemModel> templist = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,24 +52,46 @@ public class AddItem extends AppCompatActivity {
                 else
                 {
                     stocklist=readFromStock();
+                    try{
+                        templist=readFromTemp();
+                    }
+                    catch(Exception e){}
+                    Iterator<ItemModel> t=templist.iterator();
                     Iterator<ItemModel> i=stocklist.iterator();
                     ItemModel item = new ItemModel(name, quantity);
-                    boolean valid=false,check=true;
+                    boolean valid=false,check=true,temp=false;
                     ItemModel stockitem=null;
+                    ItemModel tempitem=null;
                     while(i.hasNext())
                     {
                         stockitem=i.next();
                         if(stockitem.name.equalsIgnoreCase(item.name))
                         {
                             valid=true;
+                            while (t.hasNext())
+                            {
+                                tempitem=t.next();
+                                if(tempitem.name.equalsIgnoreCase(item.name))
+                                {
+                                    temp=true;
+                                    break;
+                                }
+                            }
                             break;
                         }
                     }
                     if(valid)
                     {
-                            if (Integer.parseInt(stockitem.quantity)<Integer.parseInt(item.quantity) && Integer.parseInt(stockitem.quantity) > 0) {
+                            if(temp)
+                            {
+                                Toast.makeText(AddItem.this, "Stock Empty", Toast.LENGTH_SHORT).show();
+                                check=false;
+                            }
+                            else if (Integer.parseInt(stockitem.quantity)<Integer.parseInt(item.quantity) && Integer.parseInt(stockitem.quantity) > 0) {
                                 Toast.makeText(AddItem.this, "Required Quantity not available", Toast.LENGTH_SHORT).show();
                                 item.quantity = stockitem.quantity;
+                                stockitem.quantity="0";
+                                writeToTemp(stockitem);
                                 check=true;
                             }
                             else if (stockitem.quantity.equals("0")) {
@@ -87,11 +110,12 @@ public class AddItem extends AppCompatActivity {
                         {
                             if(itemlist.get(j).name.equalsIgnoreCase(item.name))
                             {
-                                item.quantity=Integer.toString(Integer.parseInt(item.quantity)+Integer.parseInt(itemlist.get(j).quantity));
+                                item.quantity=Integer.toString(Integer.parseInt(item.quantity)+Integer.parseInt(itemlist.get(j).quantity));;
                                 continue;
                             }
                             writeToFile(itemlist.get(j));
                         }
+
                         for(int j=0;j<stocklist.size();j++)
                         {
                             ItemModel x=stocklist.get(j);
@@ -173,6 +197,38 @@ public class AddItem extends AppCompatActivity {
             }
             br.close();
             file.delete();
+        }catch (Exception e){
+            e.getMessage();
+        }
+        return itemlist;
+    }
+    public void writeToTemp(ItemModel item){
+        String filename="Temp.txt";
+        Gson gson=new Gson();
+        String jsonItem =gson.toJson(item);
+        try{
+            File file=new File(getApplicationContext().getFilesDir(),filename);
+            FileWriter fw=new FileWriter(file,true);
+            fw.write(jsonItem+"\n");
+            fw.close();
+        }
+        catch (IOException e){
+            e.getMessage();
+        }
+    }
+    public ArrayList<ItemModel> readFromTemp(){
+        String filename="Temp.txt";
+        ArrayList<ItemModel> itemlist = new ArrayList<>();
+        Gson gson=new Gson();
+        try{
+            File file=new File(getApplicationContext().getFilesDir(),filename);
+            String line;
+            BufferedReader br=new BufferedReader(new FileReader(file));
+            while((line=br.readLine())!=null){
+                ItemModel item=gson.fromJson(line,ItemModel.class);
+                itemlist.add(item);
+            }
+            br.close();
         }catch (Exception e){
             e.getMessage();
         }

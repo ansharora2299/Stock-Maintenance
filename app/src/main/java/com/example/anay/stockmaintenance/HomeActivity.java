@@ -55,6 +55,8 @@ Button nb,ob,us,cq,sb;
         super.onResume();
         File file=new File(getApplicationContext().getFilesDir(),"Items.txt");
         file.delete();
+        File file1=new File(getApplicationContext().getFilesDir(),"Temp.txt");
+        file1.delete();
     }
 
 }

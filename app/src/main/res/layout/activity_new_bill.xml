@@ -55,7 +55,7 @@
         android:layout_toLeftOf="@+id/fab"
         android:layout_toStartOf="@+id/fab"
         android:background="@drawable/btn"
-        android:text="Print"
+        android:text="Print Bill"
         app:layout_anchor="@+id/include"
         app:layout_anchorGravity="bottom|center_horizontal"
         tools:layout_editor_absoluteY="506dp" />
