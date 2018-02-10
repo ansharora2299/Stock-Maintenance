@@ -10,6 +10,7 @@ import java.io.File;
 
 public class HomeActivity extends AppCompatActivity {
 Button nb,ob,us,cq,sb;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +51,8 @@ Button nb,ob,us,cq,sb;
             }
         });
     }
+
+    @Override
     public void onResume()
     {
         super.onResume();

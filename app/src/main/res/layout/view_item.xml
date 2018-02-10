@@ -8,19 +8,23 @@
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:fontFamily="casual"
+
         android:text="Name"
         android:textColor="@android:color/background_dark"
-
-        android:textSize="16sp"
+        android:textSize="24sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/quantity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
         android:text="Quanity"
         android:textColor="@android:color/background_dark"
-        android:textSize="16sp" />
+        android:textSize="18sp"
+        android:textStyle="italic" />
 
     <View
         android:layout_width="match_parent"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
+    android:background="@drawable/bg8"
     tools:context="com.example.anay.stockmaintenance.NewBill">
 
     <android.support.design.widget.AppBarLayout
@@ -55,7 +55,11 @@
         android:layout_toLeftOf="@+id/fab"
         android:layout_toStartOf="@+id/fab"
         android:background="@drawable/btn"
+        android:fontFamily="casual"
         android:text="Print Bill"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        android:textStyle="bold|italic"
         app:layout_anchor="@+id/include"
         app:layout_anchorGravity="bottom|center_horizontal"
         tools:layout_editor_absoluteY="506dp" />

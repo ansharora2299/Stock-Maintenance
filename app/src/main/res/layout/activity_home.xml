@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="@drawable/bg"
-    android:orientation="vertical"
-    tools:context="com.example.anay.stockmaintenance.HomeActivity">
+    android:background="@drawable/bg3"
+    android:orientation="vertical">
 
     <Button
         android:id="@+id/newbill"
@@ -15,17 +13,18 @@
         android:layout_height="0dp"
         android:layout_marginLeft="28dp"
         android:layout_marginRight="28dp"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="80dp"
         android:layout_weight="1"
         android:background="@drawable/btn"
         android:elevation="10dp"
+        android:fontFamily="casual"
         android:padding="5dp"
         android:soundEffectsEnabled="false"
         android:text="New Bill"
         android:textAllCaps="false"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="28sp"
-        android:textStyle="italic"
+        android:textColor="@color/colorPrimary"
+        android:textSize="32sp"
+        android:textStyle="bold|italic"
         android:visibility="visible" />
 
     <Button
@@ -38,12 +37,13 @@
         android:layout_weight="1"
         android:background="@drawable/btn"
         android:elevation="10dp"
+        android:fontFamily="casual"
         android:padding="5dp"
         android:text="Old Bill"
         android:textAllCaps="false"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="28sp"
-        android:textStyle="italic" />
+        android:textColor="@color/colorPrimary"
+        android:textSize="32sp"
+        android:textStyle="bold|italic" />
 
     <Button
         android:id="@+id/update"
@@ -55,13 +55,14 @@
         android:layout_weight="1"
         android:background="@drawable/btn"
         android:elevation="10dp"
+        android:fontFamily="casual"
         android:padding="5dp"
         android:text="Update Stock"
         android:textAllCaps="false"
-        android:textColor="@color/colorPrimaryDark"
+        android:textColor="@color/colorPrimary"
         android:textIsSelectable="false"
-        android:textSize="28sp"
-        android:textStyle="italic" />
+        android:textSize="32sp"
+        android:textStyle="bold|italic" />
 
     <Button
         android:id="@+id/check"
@@ -71,32 +72,34 @@
         android:layout_marginRight="28dp"
         android:layout_marginTop="24dp"
         android:layout_weight="1"
+        android:background="@drawable/btn"
         android:elevation="10dp"
+        android:fontFamily="casual"
         android:padding="5dp"
         android:text="Stock List"
         android:textAllCaps="false"
-        android:textColor="?attr/actionModeSplitBackground"
-        android:background="@drawable/btn"
-        android:textSize="28sp"
-        android:textStyle="italic" />
+        android:textColor="@color/colorPrimary"
+        android:textSize="32sp"
+        android:textStyle="bold|italic" />
 
     <Button
         android:id="@+id/stockbuy"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginBottom="90dp"
+        android:layout_marginBottom="80dp"
         android:layout_marginLeft="28dp"
         android:layout_marginRight="28dp"
         android:layout_marginTop="24dp"
         android:layout_weight="1"
+        android:background="@drawable/btn"
         android:elevation="10dp"
+        android:fontFamily="casual"
         android:padding="5dp"
+        android:paddingBottom="5dp"
         android:text="Items To Buy"
         android:textAllCaps="false"
-        android:textColor="@android:color/holo_red_dark"
-        android:background="@drawable/btn"
-        android:textSize="28sp"
-        android:textStyle="italic"
-        android:visibility="visible" />
+        android:textColor="@color/colorPrimary"
+        android:textSize="32sp"
+        android:textStyle="bold|italic" />
 
 </LinearLayout>
